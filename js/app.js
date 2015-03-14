@@ -5,12 +5,19 @@ $(document).ready(function(){
 		var app = app || {};
 		app.models = {};
 		app.viewmodels = {};
-		var paperItems ='';
-		//console.log("s:::::::"+ko.toJS(paperItems));
+		var paperItemsSubscribed ='';
+		var newspaperLists = "";
+		//console.log("s:::::::"+ko.toJS(paperItemsSubscribed));
 
-		paperItems = ko.utils.parseJson(paperItems);
+		paperItemsSubscribed = ko.utils.parseJson(paperItemsSubscribed);
+		newspaperLists = ko.utils.parseJson(newspaperLists);
+
+		app.models.newspaperModel = function(newspaperItem){
+			var self= this;
+		};
+
 		app.models.paperModel = function(paperItem){
-			//paperItem = ko.toJS(paperItems) || "";
+			//paperItem = ko.toJS(paperItemsSubscribed) || "";
 			var self = this;
 			//self.id = ko.observable(paperItem.id ? paperItem.id : "");
 			self.papertitle = ko.observable(paperItem.papertitle ? paperItem.papertitle : "");
@@ -27,7 +34,7 @@ $(document).ready(function(){
 										else if(self.paperstatus() == "Pending"){
 											cssclass = "warning";
 										}
-										else if(self.paperstatus() == "Declined"){
+										else if(self.paperstatus() == "Expired"){
 											cssclass = "error";
 										}
 										else{
@@ -40,7 +47,7 @@ $(document).ready(function(){
 		app.viewmodels.paperViewModel = function(){
 			var self = this;
 			self.paperList = ko.observableArray(
-								ko.utils.arrayMap(paperItems, function(paperItem){
+								ko.utils.arrayMap(paperItemsSubscribed, function(paperItem){
 									console.log(paperItem);
 									return new app.models.paperModel(paperItem);
 								})
@@ -49,16 +56,13 @@ $(document).ready(function(){
 
 		app.servicelayer = (function($){
 
-			function _getData(url){
-				// $.ajax({
-				//   dataType: "json",
-				//   url: url,
-				//   data: data,
-				//   success: success
-				// });
+			function _getData(url, callbackFun){
+
 				$.get( url,  function( data ) {
-				    $( ".result" ).html( data );
-				 		 console.log( "Load was performed." );
+				    
+				 		 console.log( "Load was performed." + data);
+				 		
+				 		 callbackFun(data);
 					}, "json")
 					.done(function() {
 				    	console.log( "second success" );
@@ -94,13 +98,24 @@ $(document).ready(function(){
 
 		})($, ko);
 
+		app.fetch = (function($){
+			function _getHomePaperList(data){
+				paperItemsSubscribed = data;
+				var paperInstance = new app.viewmodels.paperViewModel();
+				app.utilities.applyTemplate(paperInstance, "#home");
+
+			};
+
+			return{
+				getHomePaperList: _getHomePaperList
+			}
+		})($);
+
 		app.run = (function($, app){
 
 			function _init(){
-					var paperInstance = new app.viewmodels.paperViewModel();
-					app.utilities.applyTemplate(paperInstance, "#home");
-					app.servicelayer.getData("../paperItems.json");
-
+					app.servicelayer.getData("paperItemsSubscribed.json", app.fetch.getHomePaperList);
+//					app.fetch.getHomePaperList(data);				
 			};
 
 			return{
