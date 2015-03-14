@@ -1,0 +1,160 @@
+1. first open git and type below commands in git bash
+
+
+Welcome to Git (version 1.9.5-preview20141217)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+
+nitesh@NITESH-PC ~
+$ heroku login
+Enter your Heroku credentials.
+Email: niteshp27@gmail.com
+Password (typing will be hidden):
+Authentication successful.
+
+nitesh@NITESH-PC ~
+$ cd D:\ds-aptana\src
+sh.exe": cd: D:ds-aptanasrc: No such file or directory
+
+nitesh@NITESH-PC ~
+$ cd d:
+
+nitesh@NITESH-PC /d
+$ cd ds-aptana\src
+sh.exe": cd: ds-aptanasrc: No such file or directory
+
+nitesh@NITESH-PC /d
+$ cd ds-aptana
+
+nitesh@NITESH-PC /d/ds-aptana (master)
+$ cd src
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$ git init
+Initialized empty Git repository in d:/ds-aptana/src/.git/
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$ heroku git:remote -a daily-times
+Git remote heroku added
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$ git add .
+warning: LF will be replaced by CRLF in 404.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in browserconfig.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in crossdomain.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in css/bootstrap.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in css/main.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in dashboard.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in humans.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/plugins.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/bootstrap.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/jquery-1.11.2.min.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/knockout-3.3.0.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/knockout.mapping-latest.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/modernizr-2.8.3.min.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in robots.txt.
+The file will have its original line endings in your working directory.
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$ git commit -am "make it better"
+[master (root-commit) 50030ea] make it better
+warning: LF will be replaced by CRLF in 404.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in browserconfig.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in crossdomain.xml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in css/bootstrap.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in css/main.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in dashboard.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in humans.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/plugins.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/bootstrap.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/jquery-1.11.2.min.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/knockout-3.3.0.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/knockout.mapping-latest.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in js/vendor/modernizr-2.8.3.min.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in robots.txt.
+The file will have its original line endings in your working directory.
+ 23 files changed, 7166 insertions(+)
+ create mode 100644 404.html
+ create mode 100644 apple-touch-icon.png
+ create mode 100644 browserconfig.xml
+ create mode 100644 crossdomain.xml
+ create mode 100644 css/app.css
+ create mode 100644 css/bootstrap.css
+ create mode 100644 css/main.css
+ create mode 100644 dashboard.html
+ create mode 100644 favicon.ico
+ create mode 100644 humans.txt
+ create mode 100644 img/homeBackground.jpg
+ create mode 100644 img/site-logo.png
+ create mode 100644 index.html
+ create mode 100644 js/app.js
+ create mode 100644 js/main.js
+ create mode 100644 js/plugins.js
+ create mode 100644 js/vendor/bootstrap.js
+ create mode 100644 js/vendor/jquery-1.11.2.min.js
+ create mode 100644 js/vendor/knockout-3.3.0.js
+ create mode 100644 js/vendor/knockout.mapping-latest.js
+ create mode 100644 js/vendor/modernizr-2.8.3.min.js
+ create mode 100644 paperItems.json
+ create mode 100644 robots.txt
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$ git push heroku master
+Counting objects: 29, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (29/29), 667.26 KiB | 0 bytes/s, done.
+Total 29 (delta 0), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote:
+remote:  !     Push rejected, no Cedar-supported app detected
+remote:
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to daily-times.
+remote:
+To https://git.heroku.com/daily-times.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/daily-times.git'
+
+nitesh@NITESH-PC /d/ds-aptana/src (master)
+$

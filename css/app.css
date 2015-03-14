@@ -1,0 +1,377 @@
+/*pallet colors*/
+.dark-primary-color    { background: #616161; }
+.default-primary-color { background: #9E9E9E; }
+.light-primary-color   { background: #F5F5F5; }
+.text-primary-color    { color: #212121; }
+.accent-color          { background: #FF5722; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+
+/*Generic css override*/
+body{font-size: 12px; font-family: 'Roboto', sans-serif;}
+input:not([type]), input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+    padding: 3px;font-size: 12px
+}
+.text-white{ color: #fff;}
+/*hr{
+    border-color: #2C3E50;
+}*/
+
+/*accordian*/
+.panel-group {
+margin-bottom: 20px;
+}
+.panel-group .panel {
+margin-bottom: 5px;
+/* border-radius: 4px; */
+border: 1px solid #E5E5E5;
+
+}
+.panel-default {
+border-color: #DDD;
+}
+.panel {
+margin-bottom: 20px;
+background-color: #FFF;
+border: 1px solid #eee;
+border-radius: 0;
+-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-default>.panel-heading {
+color: #FF5722;
+background-color: transparent;
+border-radius: 0;
+
+}
+.panel-group .panel-heading {
+border-bottom: 0;
+}
+.panel-heading {
+/*padding: 10px 15px;*/
+border-bottom: 1px dotted rgba(0, 0, 0, 0);
+
+}
+.panel-title {
+margin-top: 0;
+margin-bottom: 0;
+font-size: 16px;
+color: inherit;
+}
+.panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a {
+color: inherit;width: 100%;
+display: block; padding: 10px 15px; 
+}
+.panel-body {
+padding: 10px 15px;
+}
+
+.btn-floating {
+    display: inline-block;
+    color: #FFF;
+    position: relative;
+    z-index: 1;
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+    padding: 0;
+    background-color: #26A69A;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-clip: padding-box;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contentDashboard1 label {
+display: inline-block;
+font-weight: normal;
+}
+
+/*nav list*/
+.contentDashboard1 .nav-list {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+
+
+
+.contentDashboard1 .nav-list > .active > a, .contentDashboard1 .nav-list > .active > a:hover, .contentDashboard1 .nav-list > .active > a:focus {
+    color: #000;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #FF5722;
+    background:transparent;
+}
+.contentDashboard1 .nav-list > li > a {
+    padding: 3px 15px;
+}
+.contentDashboard1 .nav-list > li > a, .contentDashboard1 .nav-list .nav-header {
+    margin-right: -15px;
+    margin-left: -15px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.contentDashboard1 .nav > li > a {
+    display: block;
+    color: #000;
+    border:1px solid transparent;
+}
+.contentDashboard1 .nav > li > a:hover {
+    background: transparent;
+    border:1px solid #ccc;
+}
+.contentDashboard1 .nav-list > .active > a:after{
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 18px solid rgba(0, 0, 0, 0);
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-bottom: 18px solid rgba(0, 0, 0, 0);
+    border-right: 11px solid #FF5722;
+    width: 0px;
+    height: 36px;
+}
+
+
+
+.contentDashboard1 .nav-list .divider {
+    height: 1px;
+    margin: 9px 1px;
+    overflow: hidden;
+    background-color: #E5E5E5;
+    border-bottom: 1px solid #FFF;
+}
+.contentDashboard1 ul li {
+    line-height:30px;
+}
+
+/*table*/
+.contentDashboard1 .table tbody tr.success > td, .success {
+  background-color: #dff0d8;
+}
+
+.contentDashboard1 .table tbody tr.error > td, .error {
+  background-color: #f2dede;
+}
+
+.contentDashboard1 .table tbody tr.warning > td, .warning {
+  background-color: #fcf8e3;
+}
+
+.contentDashboard1 .table tbody tr.info > td, .info {
+  background-color: #d9edf7;
+}
+
+.contentDashboard1 .table tbody tr.success:hover > td, .success:hover {
+  background-color: #d0e9c6;
+}
+
+.contentDashboard1 .table tbody tr.error:hover > td, .error:hover {
+  background-color: #ebcccc;
+}
+
+.contentDashboard1 .table tbody tr.warning:hover > td, .warning:hover {
+  background-color: #faf2cc;
+}
+
+.contentDashboard1 .table tbody tr.info:hover > td, .info:hover {
+  background-color: #c4e3f3;
+}
+.contentDashboard1 .info, .contentDashboard1 .error{
+    padding: 5px;
+}
+.red{
+    color: red;
+}
+
+
+/*form search*/
+.contentDashboard1 .orderSummary .error{
+    font-weight: bold;
+    font-size: 16px;
+}
+.contentDashboard1 .form-search .input-append, .contentDashboard1 .form-inline .input-append, .contentDashboard1 .form-search .input-prepend, .contentDashboard1 .form-inline .input-prepend {
+    margin-bottom: 0;
+}
+.contentDashboard1 .form-search input, .contentDashboard1 .form-inline input, .contentDashboard1 .form-horizontal input, .contentDashboard1 .form-search textarea, .contentDashboard1 .form-inline textarea, .contentDashboard1 .form-horizontal textarea, .contentDashboard1 .form-search select, .contentDashboard1 .form-inline select, .contentDashboard1 .form-horizontal select, .contentDashboard1 .form-search .help-inline, .contentDashboard1 .form-inline .help-inline, .contentDashboard1 .form-horizontal .help-inline, .contentDashboard1 .form-search .uneditable-input, .contentDashboard1 .form-inline .uneditable-input, .contentDashboard1 .form-horizontal .uneditable-input, .contentDashboard1 .form-search .input-prepend, .contentDashboard1 .form-inline .input-prepend, .contentDashboard1 .form-horizontal .input-prepend, .contentDashboard1 .form-search .input-append, .contentDashboard1 .form-inline .input-append, .contentDashboard1 .form-horizontal .input-append {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.contentDashboard1 .input-append, .contentDashboard1 .input-prepend {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.contentDashboard1 .input-append .add-on, .contentDashboard1 .input-append .btn, .contentDashboard1 .input-append .btn-group {
+    margin-left: -1px;
+}
+
+.contentDashboard1 .form-search input{
+    padding: 5px 5px;
+    height: 40px;
+    font-size: 14px; 
+}
+.contentDashboard1 .form-search .input-append{
+    display:block; 
+}
+.contentDashboard1 .form-search .input-append .btnSite{
+    height: 40px;
+    border-radius: 0;
+    border: 1px solid #CCC;
+    width: 90px;
+}
+.contentDashboard1 .radio input[type="radio"], .contentDashboard1 .radio-inline input[type="radio"], .contentDashboard1 .checkbox input[type="checkbox"], .contentDashboard1 .checkbox-inline input[type="checkbox"] {
+    position: static; 
+    margin-left: 0px; 
+    margin-top: 4px \9;
+}
+
+.contentDashboard1 .card-panel {
+    padding: 20px;
+    margin: 0.5rem 0 1rem 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-clip: padding-box;
+    background-color: #FFF;
+}
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, ul.side-nav {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+/*site specific css definitions*/
+
+.loginWrapper ul{ list-style:none;padding-left:0; display: inline }
+.loginWrapper ul li{ list-style:none; padding:5px; float:left }
+.loginWrapper ul li:last-child{padding-right:0;}
+header{ max-height: 80px; min-height: 70px;background: none repeat scroll 0% 0% rgba(0, 0, 0, 0.7); }
+.container{ max-width:1200px; margin:0 auto}
+.imageWrapper, .loginWrapper{ padding:10px 0 0 }
+.btnSite{ padding:2px 8px; background: #ff5722; color: #fff; border: 1px solid; border-radius: 0;}
+.forgotPassword a:hover, .forgotPassword a:visited, .forgotPassword a:link{ color: #FFF}
+.rightSection, .leftSection{ padding-top:60px;padding-bottom:60px}
+.contentBlock1{
+    color: #fff;
+}
+.contentDashboard1{
+    color: #000;
+}
+
+.contentDashboard1 .searchCard, .contentDashboard1 .paymentCard{
+    margin-bottom: 20px;
+}
+.contentBlock1 .rightSection{
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.bgImage{
+    position:absolute;
+    top:0px;
+    left:0;
+    background:#9e9e9e no-repeat url("../img/homeBackground.jpg");
+    background-size: cover;background-position: 50% 50%;color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index:-1
+}
+.contentDashboard1 .dashboard-sidenav ul.nav-tabs{
+   border:none;
+}
+.contentDashboard1 .navLeftSection {
+    position:relative;   
+}
+.contentDashboard1 .navLeftSection .dashboard-sidenav{
+    
+}
+@media (max-width:320px){
+    .contentDashboard1 .contentRightSection, .contentDashboard1 .navLeftSection{
+        width:100%
+    }
+}
+
+.contentDashboard1 .btn.btnPayment{
+    width:100%;
+}
+.contentDashboard1 .btn.btn-floating.btnStep {
+    margin-right: 15px;
+}
+.contentDashboard1 textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 5px 5px;
+    font-size: 14px;
+}
+
+.contentDashboard1 .filterList {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.contentDashboard1 .filterList > span {
+    margin-right:15px;
+}
+
+.contentDashboard1 .deliverySummary hr, .contentDashboard1 .orderSummary hr, .contentDashboard1 .paymentOptions hr{
+    border-style: dotted;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 890px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media screen and (max-width: 767px){
+    .contentDashboard1 .table-responsive > *
+    {
+        padding-left:5px;  padding-right:5px;
+    }
+    .contentDashboard1 .form-search input {
+        width: 100%%;
+        margin-bottom: 15px;
+    }
+    .contentDashboard1 .form-search .input-append .btn.btnSite{
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+
+    .contentDashboard1 .form-search input {
+        width: 80%;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+
+    .contentDashboard1 .form-search input {
+        width: 88%;
+    }
+}
+@media screen and (min-width: 1201px){
+
+    .contentDashboard1 .form-search input {
+        width: 90%;
+    }
+}

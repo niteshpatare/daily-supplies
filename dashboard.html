@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/app.css">
+        
+    </head>
+    <body class="bodyContainer">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Topbar content here -->
+        <header class="">
+        	<div class="container">        	
+		        <div class="row">
+		        	<div class="col-xs-5 col-sm-5 col-md-5 col-lg-4">
+		        		<div class="imageWrapper">
+		        			<img src="img/site-logo.png" alt="Logo" >
+		        		</div>
+		        	</div>   
+		        	<div class="col-xs-7 col-sm-7 col-md-7 col-lg-8">
+		        		<div class="loginWrapper pull-right clearfix">
+		        			<ul class="clearfix">
+                                <li>
+                                    <button class="divider-color btn btn-flat btnSite" onclick="">Log Out</button>
+                                </li>
+                            </ul>
+                            
+		        		</div>
+		        	</div>        	 	
+		        </div>
+	        </div>
+		</header>
+        <section class="contentDashboard1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-2 col-md-2 col-lg-2 navLeftSection">
+                        <div class="dashboard-sidenav">
+                            <ul class="nav nav-list">
+                                <li class="active"><a href="#home"  data-toggle="tab">Home</a></li>                            
+                                <li><a href="#notify"  data-toggle="tab">Notifications</a></li>
+                                <li><a href="#payment" data-toggle="tab">Payments</a></li>
+                                <li><a href="#order" data-toggle="tab">Orders</a></li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-9 col-sm-10 col-md-10 col-lg-10 contentRightSection">
+                        <div class="tab-content">
+                            <div class="tab-pane home active " id="home" >
+                                <div class="card-panel">
+                                    <h2>Papers Subscribed</h2>
+                                    <p class="info">You can find all the news papers that you subscribed here!.</p>
+                                    <div class="table-responsive ">
+                                        <table class="table table-condensed ">
+                                        <thead>
+                                            <th>News Paper Title</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Plan</th>
+                                            <th>Payment Mode</th>
+                                            <th>Status</th>                                
+                                        </thead>
+                                        <tbody data-bind=" foreach:paperList ">
+                                            <tr data-bind="css: paperstatusclass" >
+                                                <td><span data-bind="text: papertitle"></span></td>
+                                                <td><span data-bind="text: startdt"></span></td>
+                                                <td><span data-bind="text: enddt"></span></td>
+                                                <td><span data-bind="text: plan"></span></td>
+                                                <td><span data-bind="text: paymentmode"> </span></td>
+                                                <td><span data-bind="text: paperstatus"></span></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="results"></div>
+                                </div>
+                                <hr>
+                                <div class="searchCard card-panel">
+                                    <h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">1</i></span>Search for news papers to subscribe.</h2>
+                                    <p class="info" >Its quick and a hassle free process.</p>
+                                    <form class="form-search">
+                                      <div class="input-append">
+                                        <input type="text" class="span2 search-query">
+                                        <button type="submit" class="btn btnSite">Search</button>
+                                      </div>
+                                    </form>
+                                    <div class="filterList">
+                                        <span>
+                                            <select>
+                                              <option>Select an option</option>
+                                              <option>Monthly</option>
+                                              <option>Quaterly</option>
+                                              <option>Half Yearly</option>
+                                              <option>Yearly</option>
+                                              
+                                            </select>
+                                        </span> 
+                                        <span>
+                                            <label class="checkbox inline">
+                                              <input type="checkbox" value="vendors">
+                                              Offers from news paper vendor
+                                            </label>
+                                        </span>
+                                        <span>
+                                            <label class="checkbox inline">
+                                              <input type="checkbox" value="earlier subscriptions">
+                                              News papers that were subscribed earlier.
+                                            </label>
+                                        </span>  
+                                                                                    
+                                        <span>
+                                            <label class="checkbox inline">
+                                              <input type="checkbox" value="Marathi-Lang">
+                                              Marathi Language
+                                            </label>
+                                        </span>
+                                        <span>
+                                            <label class="checkbox inline">
+                                              <input type="checkbox" value="Hindi-Lang">
+                                              Hindi Language
+                                            </label>
+                                        </span>
+                                        <span>
+                                            <label class="checkbox inline">
+                                              <input type="checkbox" value="English-Lang">
+                                              English Language
+                                            </label>
+                                        </span>                                        
+ 
+
+
+                                    </div>
+                                    <div class="searchResultList">
+                                        <p class="info">No search results displayed. Type news paper name in above text area and click on search.</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="paymentCard card-panel">
+                                    <h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">2</i></span>Confirm the details before making payment.</h2>
+                                    <p class="info">Just select the payment option, and swiftly carryout the transaction.</p>
+                                    <div  class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="deliverySummary">                                  
+                                                    <h3>Delivery Address</h3>  <hr>                                                      
+                                                    <div><b>Address</b></div>
+                                                    <div>
+                                                        <span>
+                                                            <label class="checkbox inline">
+                                                              <input type="checkbox" value="savedAddress">
+                                                              Saved Address
+                                                            </label>
+                                                        </span>  
+                                                        <span>
+                                                            <label class="checkbox inline">
+                                                              <input type="checkbox" value="newAddress">
+                                                              New Address
+                                                            </label>
+                                                        </span>  
+                                                    </div>
+                                                    <p>704 A wing, moshi dehu road, Pune</p>
+                                                    <p>
+                                                        <textarea></textarea>
+                                                    </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                            <div class="orderSummary">                                  
+                                                    <h3>Order Summary</h3><hr>
+                                                    <p>
+                                                        <span><b>News Paper Title</b></span>: <span>Times of PCMC</span>
+                                                    </p>
+                                                    <p>
+                                                        <span><b>Plan</b></span>: <span>Yearly</span>
+                                                    </p>
+                                                    <p>
+                                                        <span><b>Quantity</b></span>: <span>1</span>
+                                                    </p>
+                                                     <p class="error">
+                                                        <span><b>Total Amount</b></span>: <span class="red">120 Rs</span>
+                                                    </p>
+                                                    <p class="info">We will get back to you ASAP.</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="paymentOptions card-panel">
+                                    <div  class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                
+                                                <h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">3</i></span>Select Payment Mode</h2><hr>
+                                                <p class="info">Make payment for news papers that you want to subscribe to.</p>
+                                                <div class="panel-group" id="paymentAcccordian" role="tablist" aria-multiselectable="true">
+                                                  <div class="panel panel-default divider-color  ">
+                                                    <div class="panel-heading" role="tab" id="headingOne">
+                                                      <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                          Credit Card
+                                                        </a>
+                                                      </h4>
+                                                    </div>
+                                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                      <div class="panel-body">
+                                                          <p>Pay <span>Rs 349</span> with credit card.</p>
+                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="panel panel-default">
+                                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                                      <h4 class="panel-title">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                          Debit Card
+                                                        </a>
+                                                      </h4>
+                                                    </div>
+                                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                      <div class="panel-body">
+                                                        <p>Pay <span>Rs 349</span> with debit card.</p>
+                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="panel panel-default">
+                                                    <div class="panel-heading" role="tab" id="headingThree">
+                                                      <h4 class="panel-title">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                          Net Banking
+                                                        </a>
+                                                      </h4>
+                                                    </div>
+                                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                      <div class="panel-body">
+                                                         <p>Pay <span>Rs 349</span> with net banking.</p>
+                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="panel panel-default">
+                                                    <div class="panel-heading" role="tab" id="headingFour">
+                                                      <h4 class="panel-title">
+                                                        <a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                          Cash on delivery
+                                                        </a>
+                                                      </h4>
+                                                    </div>
+                                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                                      <div class="panel-body">
+                                                         <p>Pay <span>Rs 349</span> with cash on delivery.</p>
+                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+                                                      </div>
+                                                    </div>
+
+                                                  </div>
+
+
+
+                                                                                    
+
+
+
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    
+                                                                      
+                                </div>                                
+                            </div>
+                            <div class="tab-pane card-panel notify" id="notify">
+                                <h2>Notifications</h2>
+                                <p>You can find all the news papaers that you subscribed here!.</p>
+                            
+                            </div>
+                            <div class="tab-pane card-panel payment" id="payment">
+                                <h2>Payments</h2>
+                                <p>You can find all the news papaers that you subscribed here!.</p>
+                            
+                            </div>
+                            <div class="tab-pane card-panel order" id="order">
+                                <h2>Orders</h2>
+                                <p>You can find all the news papaers that you subscribed here!.</p>
+                            
+                            </div>                            
+                        </div>
+                                                
+                    </div>                    
+                </div>
+            </div>
+        </section>
+<!--
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+-->
+
+		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="js/vendor/jquery-1.11.2.min.js"></script>
+		<script src="js/vendor/bootstrap.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/vendor/knockout-3.3.0.js"></script>
+        <!--<script src="js/vendor/knockout.mapping-latest.js"></script>-->
+        <script src="js/app.js"></script>
+
+        <script type="text/html" id="paperListPanel">
+
+        </script>
+    </body>
+</html>
