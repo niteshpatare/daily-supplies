@@ -14,6 +14,10 @@ $(document).ready(function(){
 
 		app.models.newspaperModel = function(newspaperItem){
 			var self= this;
+			self.newspaperid = ko.observable(newspaperItem.newspaperid ? newspaperItem.newspaperid :"")
+			self.newspapertitle = ko.observable(newspaperItem.newspapertitle ? newspaperItem.newspapertitle :"")
+			self.newspaperoffer = ko.observable(newspaperItem.newspaperoffer ? newspaperItem.newspaperoffer :"")
+			self.newspaperlanguage = ko.observable(newspaperItem.newspaperlanguage ? newspaperItem.newspaperlanguage :"")
 		};
 
 		app.models.paperModel = function(paperItem){
@@ -42,6 +46,16 @@ $(document).ready(function(){
 										}
 										return cssclass;
 									});
+		};
+
+		app.viewmodels.newspaperViewModel = function(){
+			var self= this;
+			self.newspaperList = ko.observableArray(
+									ko.utils.arrayMap(newspaperLists,function(newspaperitem){
+										console.log(newspaperitem);
+										return new app.models.newspaperModel(newspaperitem);
+									})
+								);
 		};
 
 		app.viewmodels.paperViewModel = function(){
@@ -105,9 +119,15 @@ $(document).ready(function(){
 				app.utilities.applyTemplate(paperInstance, "#home");
 
 			};
+			function _getSearchPaperList(data){
+				newspaperLists = data;
+				var newspaperListsInstance = new app.viewmodels.newspaperViewModel();
+				app.utilities.applyTemplate(newspaperListsInstance, "#searchcard");
 
+			};
 			return{
-				getHomePaperList: _getHomePaperList
+				getHomePaperList: _getHomePaperList,
+				getSearchPaperList: _getSearchPaperList
 			}
 		})($);
 
@@ -115,6 +135,7 @@ $(document).ready(function(){
 
 			function _init(){
 					app.servicelayer.getData("paperItemsSubscribed.json", app.fetch.getHomePaperList);
+					app.servicelayer.getData("newspaperItemsListed.json", app.fetch.getSearchPaperList);
 //					app.fetch.getHomePaperList(data);				
 			};
 
