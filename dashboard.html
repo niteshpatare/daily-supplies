@@ -62,6 +62,10 @@
                                 <div class="card-panel"  id="home">
                                     <h2>Papers Subscribed</h2>
                                     <p class="info">You can find all the news papers that you subscribed here!.</p>
+                                    <!-- ko if : paperList().length <= 0 -->
+                                            <p class="info">No search results displayed. Type news paper name in above text area and click on search.</p>
+                                    <!-- /ko -->
+                                     <!-- ko if : paperList().length > 0 -->   
                                     <div class="table-responsive ">
                                         <table class="table table-condensed ">
                                         <thead>
@@ -71,21 +75,15 @@
                                             <th>Plan</th>
                                             <th>Payment Mode</th>
                                             <th>Status</th>                                
-                                        </thead>
-                                        <tbody data-bind=" foreach:paperList ">
-                                            <tr data-bind="css: paperstatusclass" >
-                                                <td><span data-bind="text: papertitle"></span></td>
-                                                <td><span data-bind="text: startdt"></span></td>
-                                                <td><span data-bind="text: enddt"></span></td>
-                                                <td><span data-bind="text: plan"></span></td>
-                                                <td><span data-bind="text: paymentmode"> </span></td>
-                                                <td><span data-bind="text: paperstatus"></span></td>
-                                            </tr>
+                                        </thead>                                      
+                                        <tbody  data-bind= "template: { name:'paperListPanel', foreach: paperList}">
                                             
                                         </tbody>
+                                         
                                         </table>
                                     </div>
-                                    <div class="results"></div>
+                                    <!-- /ko -->
+                                    
                                 </div>
                                 <hr>
                                 <div class="searchcard card-panel" id="searchcard">
@@ -144,7 +142,14 @@
 
                                     </div>
                                     <div class="searchResultList">
+                                        <!-- ko if : newspaperList().length <= 0 -->
                                         <p class="info">No search results displayed. Type news paper name in above text area and click on search.</p>
+                                        <!-- /ko -->
+                                        <!-- ko if : newspaperList().length > 0 -->
+                                        <div class="row" data-bind= "template: { name:'newspapersearchpanel', foreach: newspaperList}">
+                                                                                   
+                                        </div>
+                                        <!-- /ko --> 
                                     </div>
                                 </div>
                                 <hr>
@@ -314,6 +319,37 @@
         <script src="js/app.js"></script>
 
         <script type="text/html" id="paperListPanel">
+                                            <tr data-bind="css: paperstatusclass" >
+                                                <td><span data-bind="text: papertitle"></span></td>
+                                                <td><span data-bind="text: startdt"></span></td>
+                                                <td><span data-bind="text: enddt"></span></td>
+                                                <td><span data-bind="text: plan"></span></td>
+                                                <td><span data-bind="text: paymentmode"> </span></td>
+                                                <td><span data-bind="text: paperstatus"></span></td>
+                                            </tr>
+        </script>
+
+        <script type="text/html" id="newspapersearchpanel">
+
+            <div class="col-lg-3 col-sm-4 col-md-3 col-xs-6">
+                                                <div class="card small">
+                                                    <div class="card-image">
+                                                        <img src="img/times-of-india.jpg">
+                                                        <span class="card-title" data-bind="text: $data.newspapertitle">Newspaper Title</span>
+                                                    </div>
+                                                    <div class="card-content">
+                                                        <p><span>Monthly Price: </span><span  data-bind="text: monthlyoffer"></span></p>
+                                                        <p><span>Quaterly Price: </span><span  data-bind="text: quaterlyoffer"></span></p>
+                                                        <p><span>Half Yearly Price: </span><span  data-bind="text: halfyearlyoffer"></span></p>
+                                                        <p><span>Yearly Price: </span><span  data-bind="text: yearlyoffer"></span></p>
+                                                        <p><span>Language: </span><span  data-bind="text: newspaperlanguage"></span></p>
+                                                        
+                                                    </div>
+                                                    <div class="card-action text-center">
+                                                        <buttom class="btn bn-flat btnSite" onclick="">Subscribe</button>
+                                                    </div>
+                                                </div>
+            </div> 
 
         </script>
     </body>

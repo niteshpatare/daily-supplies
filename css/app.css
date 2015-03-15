@@ -252,6 +252,138 @@ font-weight: normal;
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
+/*card speific*/
+.card.small {
+  height: 300px;
+}
+
+.card.small, .card.medium, .card.large {
+  position: relative;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #FFF;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-clip: padding-box;
+}
+
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, ul.side-nav {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.card.small .card-image {
+  height: 150px;
+}
+
+.card.small .card-image, .card.medium .card-image, .card.large .card-image {
+  overflow: hidden;
+}
+
+.card .card-image {
+  position: relative;
+}
+.card .card-image img {
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
+  border-radius: 2px 2px 0 0;
+  background-clip: padding-box;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.card .card-image .card-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.card .card-title {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.card.small .card-content {
+  height: 150px;
+}
+
+.card.small .card-content, .card.medium .card-content, .card.large .card-content {
+  overflow: hidden;
+}
+.searchResultList .card{
+    box-shadow: none;
+}
+.card .card-content {
+  padding: 5px 10px;
+  -webkit-border-radius: 0 0 2px 2px;
+  -moz-border-radius: 0 0 2px 2px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.card .card-content p {
+  margin: 0;
+  color: inherit;
+}
+.card .card-content > p span:first-child{
+    color: #aaas;
+    font-weight: bold;
+}
+.card-panel span, .card-content p {
+  -webkit-font-smoothing: antialiased;
+}
+.card.small .card-action, .card.medium .card-action, .card.large .card-action {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card .card-action {
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  padding: 5px 10px;
+}
+.card a {
+  color: #FFAB40;
+  margin-right: 20px;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.card.small .card-image {
+  background: rgba(0, 0, 0, 0.7);
+}
+.text-center{
+    text-align: center;
+}
+
+.searchResultList .btnSite{
+    background: #ccc;
+}
+.searchResultList .btnSite:hover{
+    background: #FF5722;
+}
 /*site specific css definitions*/
 
 .loginWrapper ul{ list-style:none;padding-left:0; display: inline }

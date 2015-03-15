@@ -9,15 +9,17 @@ $(document).ready(function(){
 		var newspaperLists = "";
 		//console.log("s:::::::"+ko.toJS(paperItemsSubscribed));
 
-		paperItemsSubscribed = ko.utils.parseJson(paperItemsSubscribed);
-		newspaperLists = ko.utils.parseJson(newspaperLists);
+
 
 		app.models.newspaperModel = function(newspaperItem){
 			var self= this;
-			self.newspaperid = ko.observable(newspaperItem.newspaperid ? newspaperItem.newspaperid :"")
-			self.newspapertitle = ko.observable(newspaperItem.newspapertitle ? newspaperItem.newspapertitle :"")
-			self.newspaperoffer = ko.observable(newspaperItem.newspaperoffer ? newspaperItem.newspaperoffer :"")
-			self.newspaperlanguage = ko.observable(newspaperItem.newspaperlanguage ? newspaperItem.newspaperlanguage :"")
+			//self.newspaperid = ko.observable(newspaperItem.newspaperid ? newspaperItem.newspaperid :"");
+			self.newspapertitle = ko.observable(newspaperItem.newspapertitle ? newspaperItem.newspapertitle :"");
+			self.newspaperlanguage = ko.observable(newspaperItem.newspaperlanguage ? newspaperItem.newspaperlanguage :"");
+			self.monthlyoffer = ko.observable(newspaperItem.monthlyoffer ? newspaperItem.monthlyoffer :"");			
+			self.quaterlyoffer = ko.observable(newspaperItem.quaterlyoffer ? newspaperItem.quaterlyoffer :"")
+			self.halfyearlyoffer = ko.observable(newspaperItem.halfyearlyoffer ? newspaperItem.halfyearlyoffer :"")
+			self.yearlyoffer = ko.observable(newspaperItem.yearlyoffer ? newspaperItem.yearlyoffer :"")
 		};
 
 		app.models.paperModel = function(paperItem){
@@ -115,12 +117,15 @@ $(document).ready(function(){
 		app.fetch = (function($){
 			function _getHomePaperList(data){
 				paperItemsSubscribed = data;
+				//paperItemsSubscribed = ko.utils.parseJson(paperItemsSubscribed);
+		
 				var paperInstance = new app.viewmodels.paperViewModel();
 				app.utilities.applyTemplate(paperInstance, "#home");
 
 			};
 			function _getSearchPaperList(data){
 				newspaperLists = data;
+				//newspaperLists = ko.utils.parseJson(newspaperLists);
 				var newspaperListsInstance = new app.viewmodels.newspaperViewModel();
 				app.utilities.applyTemplate(newspaperListsInstance, "#searchcard");
 
@@ -134,9 +139,9 @@ $(document).ready(function(){
 		app.run = (function($, app){
 
 			function _init(){
-					app.servicelayer.getData("paperItemsSubscribed.json", app.fetch.getHomePaperList);
-					app.servicelayer.getData("newspaperItemsListed.json", app.fetch.getSearchPaperList);
-//					app.fetch.getHomePaperList(data);				
+					app.servicelayer.getData("../nwspaper/paperItemsSubscribed.json", app.fetch.getHomePaperList);
+					app.servicelayer.getData("../nwspaper/newspaperItemsListed.json", app.fetch.getSearchPaperList);
+			
 			};
 
 			return{
