@@ -88,7 +88,7 @@ $(document).ready(function(){
 
 			function _getData(url, callbackFun){
 
-				$.get( url,  function( data ) {
+				/*$.get( url,  function( data ) {
 				    
 				 		 logger.log( "Load was performed." + data);
 				 		
@@ -102,17 +102,52 @@ $(document).ready(function(){
 				 	})
 				 	.always(function() {
 				    	//logger.log( "finished" );
-				  });
+				  });*/
+
+				 	var request = $.ajax({
+			            type: "GET",
+			            url: url,
+			            contentType: "application/json; charset=utf-8",
+			            dataType: "json"
+			        });
+			        request.done(function (data) {
+			          	logger.log( "ajax success" );
+			            callbackFun(data); //Put the response in ObservableArray
+			        });
+			        request.fail( function (err) {
+			            logger.log(err.status + " : " + err.statusText);
+			        });
+			        request.always(function() {
+				    	logger.log( "finished" );
+				  	});
+
+
 			};
 
 			function _postData(url, data, callbackFun){
 				
-				$.post(url, data, function(response)
+				/*$.post(url, data, function(response)
 				{
 				    // on success callback
 				   logger.log(response);
 				    callbackFun(response);
-				})
+				});*/
+				var request = $.ajax({
+				  url: url,
+				  method: "POST",
+				  data: data,
+				  dataType: "json"
+				});
+				 
+				request.done(function( msg ) {
+					logger.log( "Data Saved: " + msg )
+				    callbackFun(response);
+				});
+				 
+				request.fail(function( jqXHR, textStatus ) {
+					logger.log( "Request failed: " + textStatus );
+				});
+				
 			};
 
 			return{
@@ -141,7 +176,7 @@ $(document).ready(function(){
 		})($, ko);
 		app.post = (function($){
 			function _postSearchPaperList(data){
-				var url="../nwspaper/newspaperSubscribeListed.json"
+				var url="postdata.json"
 				app.servicelayer.postData(url, data, app.fetch.postSearchSubscribeList);
 					
 			};
@@ -173,7 +208,7 @@ $(document).ready(function(){
 				
 				    // This callback is executed if the post was successful 
 				    // self.responseJSON(returnedData);   
-				//app.servicelayer.postData("../nwspaper/newspaperItemsSubscribed", app.fetch.postSearchPaperList);
+				
 			};
 
 			return{
