@@ -380,6 +380,8 @@ font-weight: normal;
 
 .searchResultList .btnSite{
     background: #ccc;
+    color: #000;
+    border-color: #888;
 }
 .searchResultList .btnSite:hover{
     background: #FF5722;

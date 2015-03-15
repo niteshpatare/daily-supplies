@@ -26,7 +26,7 @@ $(document).ready(function(){
 				var data = JSON.stringify(
 		        {
 		            newspapertitle : self.newspapertitle(), newspaperlanguage : self.newspaperlanguage(), monthlyoffer:self.monthlyoffer(), 
-		            quaterlyoffer: self.quaterlyoffer(), halfyearlyoffer : self.halfyearlyoffer, yearlyoffer: self.yearlyoffer()
+		            quaterlyoffer: self.quaterlyoffer(), halfyearlyoffer : self.halfyearlyoffer(), yearlyoffer: self.yearlyoffer()
 
 		        });
 		        logger.log(data);
