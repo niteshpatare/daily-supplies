@@ -384,6 +384,10 @@ font-weight: normal;
 .searchResultList .btnSite:hover{
     background: #FF5722;
 }
+.btnSite:hover{
+      color:#fff;
+      border-color: #fff;
+}
 /*site specific css definitions*/
 
 .loginWrapper ul{ list-style:none;padding-left:0; display: inline }
@@ -394,7 +398,7 @@ header{ max-height: 80px; min-height: 70px;background: none repeat scroll 0% 0% 
 .imageWrapper, .loginWrapper{ padding:10px 0 0 }
 .btnSite{ padding:2px 8px; background: #ff5722; color: #fff; border: 1px solid; border-radius: 0;}
 .forgotPassword a:hover, .forgotPassword a:visited, .forgotPassword a:link{ color: #FFF}
-.rightSection, .leftSection{ padding-top:60px;padding-bottom:60px}
+.rightSection, .leftSection{ padding-top:20px;padding-bottom:20px}
 .contentBlock1{
     color: #fff;
 }

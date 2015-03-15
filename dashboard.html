@@ -9,7 +9,7 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+        <!--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/app.css">
@@ -319,36 +319,37 @@
         <script src="js/app.js"></script>
 
         <script type="text/html" id="paperListPanel">
-                                            <tr data-bind="css: paperstatusclass" >
-                                                <td><span data-bind="text: papertitle"></span></td>
-                                                <td><span data-bind="text: startdt"></span></td>
-                                                <td><span data-bind="text: enddt"></span></td>
-                                                <td><span data-bind="text: plan"></span></td>
-                                                <td><span data-bind="text: paymentmode"> </span></td>
-                                                <td><span data-bind="text: paperstatus"></span></td>
-                                            </tr>
+            <tr data-bind="css: paperstatusclass" >
+                <td><span data-bind="text: papertitle"></span></td>
+                <td><span data-bind="text: startdt"></span></td>
+                <td><span data-bind="text: enddt"></span></td>
+                <td><span data-bind="text: plan"></span></td>
+                <td><span data-bind="text: paymentmode"> </span></td>
+                <td><span data-bind="text: paperstatus"></span></td>
+            </tr>
         </script>
 
         <script type="text/html" id="newspapersearchpanel">
 
             <div class="col-lg-3 col-sm-4 col-md-3 col-xs-6">
-                                                <div class="card small">
-                                                    <div class="card-image">
-                                                        <img src="img/times-of-india.jpg">
-                                                        <span class="card-title" data-bind="text: $data.newspapertitle">Newspaper Title</span>
-                                                    </div>
-                                                    <div class="card-content">
-                                                        <p><span>Monthly Price: </span><span  data-bind="text: monthlyoffer"></span></p>
-                                                        <p><span>Quaterly Price: </span><span  data-bind="text: quaterlyoffer"></span></p>
-                                                        <p><span>Half Yearly Price: </span><span  data-bind="text: halfyearlyoffer"></span></p>
-                                                        <p><span>Yearly Price: </span><span  data-bind="text: yearlyoffer"></span></p>
-                                                        <p><span>Language: </span><span  data-bind="text: newspaperlanguage"></span></p>
-                                                        
-                                                    </div>
-                                                    <div class="card-action text-center">
-                                                        <buttom class="btn bn-flat btnSite" onclick="">Subscribe</button>
-                                                    </div>
-                                                </div>
+                <form data-bind="submit: function($data){onSubscribeNewsPaper($data)}">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="img/times-of-india.jpg">
+                            <span class="card-title" data-bind="text: newspapertitle">Newspaper Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p><span>Monthly Price: </span><span  data-bind="text: monthlyoffer"></span></p>
+                            <p><span>Quaterly Price: </span><span  data-bind="text: quaterlyoffer"></span></p>
+                            <p><span>Half Yearly Price: </span><span  data-bind="text: halfyearlyoffer"></span></p>
+                            <p><span>Yearly Price: </span><span  data-bind="text: yearlyoffer"></span></p>
+                            <p><span>Language: </span><span  data-bind="text: newspaperlanguage"></span></p>
+                        </div>
+                        <div class="card-action text-center">
+                            <input class="btn bn-flat btnSite" type="submit" value="Subscribe">
+                        </div>
+                    </div>
+                </form>
             </div> 
 
         </script>

@@ -7,7 +7,7 @@ $(document).ready(function(){
 		app.viewmodels = {};
 		var paperItemsSubscribed ='';
 		var newspaperLists = "";
-		//console.log("s:::::::"+ko.toJS(paperItemsSubscribed));
+		//logger.log("s:::::::"+ko.toJS(paperItemsSubscribed));
 
 
 
@@ -17,9 +17,23 @@ $(document).ready(function(){
 			self.newspapertitle = ko.observable(newspaperItem.newspapertitle ? newspaperItem.newspapertitle :"");
 			self.newspaperlanguage = ko.observable(newspaperItem.newspaperlanguage ? newspaperItem.newspaperlanguage :"");
 			self.monthlyoffer = ko.observable(newspaperItem.monthlyoffer ? newspaperItem.monthlyoffer :"");			
-			self.quaterlyoffer = ko.observable(newspaperItem.quaterlyoffer ? newspaperItem.quaterlyoffer :"")
-			self.halfyearlyoffer = ko.observable(newspaperItem.halfyearlyoffer ? newspaperItem.halfyearlyoffer :"")
-			self.yearlyoffer = ko.observable(newspaperItem.yearlyoffer ? newspaperItem.yearlyoffer :"")
+			self.quaterlyoffer = ko.observable(newspaperItem.quaterlyoffer ? newspaperItem.quaterlyoffer :"");
+			self.halfyearlyoffer = ko.observable(newspaperItem.halfyearlyoffer ? newspaperItem.halfyearlyoffer :"");
+			self.yearlyoffer = ko.observable(newspaperItem.yearlyoffer ? newspaperItem.yearlyoffer :"");
+			self.onSubscribeNewsPaper = function(){
+				logger.log("subscribe submit");
+
+				var data = JSON.stringify(
+		        {
+		            newspapertitle : self.newspapertitle(), newspaperlanguage : self.newspaperlanguage(), monthlyoffer:self.monthlyoffer(), 
+		            quaterlyoffer: self.quaterlyoffer(), halfyearlyoffer : self.halfyearlyoffer, yearlyoffer: self.yearlyoffer()
+
+		        });
+		        logger.log(data);
+		        app.post.postSearchPaperList(data);
+		        
+
+			};
 		};
 
 		app.models.paperModel = function(paperItem){
@@ -54,7 +68,7 @@ $(document).ready(function(){
 			var self= this;
 			self.newspaperList = ko.observableArray(
 									ko.utils.arrayMap(newspaperLists,function(newspaperitem){
-										console.log(newspaperitem);
+										//logger.log(newspaperitem);
 										return new app.models.newspaperModel(newspaperitem);
 									})
 								);
@@ -64,7 +78,7 @@ $(document).ready(function(){
 			var self = this;
 			self.paperList = ko.observableArray(
 								ko.utils.arrayMap(paperItemsSubscribed, function(paperItem){
-									console.log(paperItem);
+									//logger.log(paperItem);
 									return new app.models.paperModel(paperItem);
 								})
 							 );
@@ -76,23 +90,34 @@ $(document).ready(function(){
 
 				$.get( url,  function( data ) {
 				    
-				 		 console.log( "Load was performed." + data);
+				 		 logger.log( "Load was performed." + data);
 				 		
 				 		 callbackFun(data);
 					}, "json")
 					.done(function() {
-				    	console.log( "second success" );
+				    	//logger.log( "second success" );
 				 	})
 				 	.fail(function() {
-				    	console.log( "error" );
+				    	logger.log( "error" );
 				 	})
 				 	.always(function() {
-				    	console.log( "finished" );
+				    	//logger.log( "finished" );
 				  });
 			};
 
+			function _postData(url, data, callbackFun){
+				
+				$.post(url, data, function(response)
+				{
+				    // on success callback
+				   logger.log(response);
+				    callbackFun(response);
+				})
+			};
+
 			return{
-				getData: _getData
+				getData: _getData,
+				postData: _postData
 			}
 		})($);
 
@@ -108,11 +133,24 @@ $(document).ready(function(){
 				}
 			};
 
+
 			return{
-				applyTemplate: _applyTemplate
+				applyTemplate: _applyTemplate,
 			}
 
 		})($, ko);
+		app.post = (function($){
+			function _postSearchPaperList(data){
+				var url="../nwspaper/newspaperSubscribeListed.json"
+				app.servicelayer.postData(url, data, app.fetch.postSearchSubscribeList);
+					
+			};
+
+			return{
+				postSearchPaperList: _postSearchPaperList
+			}
+
+		})($);
 
 		app.fetch = (function($){
 			function _getHomePaperList(data){
@@ -130,9 +168,18 @@ $(document).ready(function(){
 				app.utilities.applyTemplate(newspaperListsInstance, "#searchcard");
 
 			};
+			function _postSearchSubscribeList(returnedData){
+				logger.log("posted search paper list"+returnedData);
+				
+				    // This callback is executed if the post was successful 
+				    // self.responseJSON(returnedData);   
+				//app.servicelayer.postData("../nwspaper/newspaperItemsSubscribed", app.fetch.postSearchPaperList);
+			};
+
 			return{
 				getHomePaperList: _getHomePaperList,
-				getSearchPaperList: _getSearchPaperList
+				getSearchPaperList: _getSearchPaperList,
+				postSearchSubscribeList: _postSearchSubscribeList
 			}
 		})($);
 
@@ -141,6 +188,7 @@ $(document).ready(function(){
 			function _init(){
 					app.servicelayer.getData("../nwspaper/paperItemsSubscribed.json", app.fetch.getHomePaperList);
 					app.servicelayer.getData("../nwspaper/newspaperItemsListed.json", app.fetch.getSearchPaperList);
+					
 			
 			};
 
@@ -150,8 +198,21 @@ $(document).ready(function(){
 
 		})($, app);
 
+		var logger = (function (_window) {
+
+		    function _log(msg) {
+
+		        _window.console.log(msg);
+		    };
+
+		    return {
+		        log: _log
+		    };
+
+		})(window);
+
 		app.run.init();
-		console.log("end::::::");
+		logger.log("end::::::");
 	});
 });
 
