@@ -11,6 +11,8 @@
         <!-- Place favicon.ico in the root directory -->
         <!--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/steps.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/app.css">
         
@@ -86,7 +88,13 @@
                                     
                                 </div>
                                 <hr>
-                                <div class="searchcard card-panel" id="searchcard">
+								<div id="wizard" class="wizard tabcontrol">
+                                    
+									<ul id="pre" ></ul>   
+									
+									<h1 class="title">Subscribe</h1>
+									<div>
+										<div class="searchcard" id="searchcard">
                                     <h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">1</i></span>Search for news papers to subscribe.</h2>
                                     <p class="info" >Its quick and a hassle free process.</p>
                                     <form class="form-search">
@@ -152,137 +160,143 @@
                                         <!-- /ko --> 
                                     </div>
                                 </div>
-                                <hr>
-                                <div class="paymentCard card-panel">
-                                    <h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">2</i></span>Confirm the details before making payment.</h2>
-                                    <p class="info">Just select the payment option, and swiftly carryout the transaction.</p>
-                                    <div  class="row">
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                            <div class="deliverySummary">                                  
-                                                    <h3>Delivery Address</h3>  <hr>                                                      
-                                                    <div><b>Address</b></div>
-                                                    <div>
-                                                        <span>
-                                                            <label class="checkbox inline">
-                                                              <input type="checkbox" value="savedAddress">
-                                                              Saved Address
-                                                            </label>
-                                                        </span>  
-                                                        <span>
-                                                            <label class="checkbox inline">
-                                                              <input type="checkbox" value="newAddress">
-                                                              New Address
-                                                            </label>
-                                                        </span>  
-                                                    </div>
-                                                    <p>704 A wing, moshi dehu road, Pune</p>
-                                                    <p>
-                                                        <textarea></textarea>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                            <div class="orderSummary">                                  
-                                                    <h3>Order Summary</h3><hr>
-                                                    <p>
-                                                        <span><b>News Paper Title</b></span>: <span>Times of PCMC</span>
-                                                    </p>
-                                                    <p>
-                                                        <span><b>Plan</b></span>: <span>Yearly</span>
-                                                    </p>
-                                                    <p>
-                                                        <span><b>Quantity</b></span>: <span>1</span>
-                                                    </p>
-                                                     <p class="error">
-                                                        <span><b>Total Amount</b></span>: <span class="red">120 Rs</span>
-                                                    </p>
-                                                    <p class="info">We will get back to you ASAP.</p>
-                                            </div>
+									</div>
+		 
+									<h1 class="title">Delivery</h1>
+									<div>
+				
+										<div class="paymentCard ">
+											<h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">2</i></span>Confirm the details before making payment.</h2>
+											<p class="info">Just select the payment option, and swiftly carryout the transaction.</p>
+											<div  class="row">
+												<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+													<div class="deliverySummary">                                  
+															<h3>Delivery Address</h3>  <hr>                                                      
+															<div><b>Address</b></div>
+															<div>
+																<span>
+																	<label class="checkbox inline">
+																	  <input type="checkbox" value="savedAddress">
+																	  Saved Address
+																	</label>
+																</span>  
+																<span>
+																	<label class="checkbox inline">
+																	  <input type="checkbox" value="newAddress">
+																	  New Address
+																	</label>
+																</span>  
+															</div>
+															<p>704 A wing, moshi dehu road, Pune</p>
+															<p>
+																<textarea></textarea>
+															</p>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+													<div class="orderSummary">                                  
+															<h3>Order Summary</h3><hr>
+															<p>
+																<span><b>News Paper Title</b></span>: <span>Times of PCMC</span>
+															</p>
+															<p>
+																<span><b>Plan</b></span>: <span>Yearly</span>
+															</p>
+															<p>
+																<span><b>Quantity</b></span>: <span>1</span>
+															</p>
+															 <p class="error">
+																<span><b>Total Amount</b></span>: <span class="red">120 Rs</span>
+															</p>
+															<p class="info">We will get back to you ASAP.</p>
+													</div>
 
-                                        </div>
-                                    </div>
-                                </div>
+												</div>
+											</div>
+										</div>
+       
+									</div>
+			
+									<h1 class="title">Payment</h1>
+									<div>
+										<div class="paymentOptions ">
+											<div  class="row">
+												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                
+													<h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">3</i></span>Select Payment Mode</h2><hr>
+													<p class="info">Make payment for news papers that you want to subscribe to.</p>
+													<div class="panel-group" id="paymentAcccordian" role="tablist" aria-multiselectable="true">
+													  <div class="panel panel-default divider-color  ">
+														<div class="panel-heading" role="tab" id="headingOne">
+														  <h4 class="panel-title">
+															<a data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+															  Credit Card
+															</a>
+														  </h4>
+														</div>
+														<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+														  <div class="panel-body">
+															  <p>Pay <span>Rs 349</span> with credit card.</p>
+															<p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+														  </div>
+														</div>
+													  </div>
+													  <div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingTwo">
+														  <h4 class="panel-title">
+															<a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+															  Debit Card
+															</a>
+														  </h4>
+														</div>
+														<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+														  <div class="panel-body">
+															<p>Pay <span>Rs 349</span> with debit card.</p>
+															<p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+														  </div>
+														</div>
+													  </div>
+													  <div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingThree">
+														  <h4 class="panel-title">
+															<a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+															  Net Banking
+															</a>
+														  </h4>
+														</div>
+														<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+														  <div class="panel-body">
+															 <p>Pay <span>Rs 349</span> with net banking.</p>
+															<p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+														  </div>
+														</div>
+													  </div>
+													  <div class="panel panel-default">
+														<div class="panel-heading" role="tab" id="headingFour">
+														  <h4 class="panel-title">
+															<a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+															  Cash on delivery
+															</a>
+														  </h4>
+														</div>
+														<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+														  <div class="panel-body">
+															 <p>Pay <span>Rs 349</span> with cash on delivery.</p>
+															<p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
+														  </div>
+														</div>
 
-                                 <div class="paymentOptions card-panel">
-                                    <div  class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                                                
-                                                <h2><span class="btn btn-flat btn-floating btnSite btnStep"><i class="mdi-content-add">3</i></span>Select Payment Mode</h2><hr>
-                                                <p class="info">Make payment for news papers that you want to subscribe to.</p>
-                                                <div class="panel-group" id="paymentAcccordian" role="tablist" aria-multiselectable="true">
-                                                  <div class="panel panel-default divider-color  ">
-                                                    <div class="panel-heading" role="tab" id="headingOne">
-                                                      <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                          Credit Card
-                                                        </a>
-                                                      </h4>
-                                                    </div>
-                                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                                      <div class="panel-body">
-                                                          <p>Pay <span>Rs 349</span> with credit card.</p>
-                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div class="panel panel-default">
-                                                    <div class="panel-heading" role="tab" id="headingTwo">
-                                                      <h4 class="panel-title">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                          Debit Card
-                                                        </a>
-                                                      </h4>
-                                                    </div>
-                                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                      <div class="panel-body">
-                                                        <p>Pay <span>Rs 349</span> with debit card.</p>
-                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div class="panel panel-default">
-                                                    <div class="panel-heading" role="tab" id="headingThree">
-                                                      <h4 class="panel-title">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                          Net Banking
-                                                        </a>
-                                                      </h4>
-                                                    </div>
-                                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                      <div class="panel-body">
-                                                         <p>Pay <span>Rs 349</span> with net banking.</p>
-                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div class="panel panel-default">
-                                                    <div class="panel-heading" role="tab" id="headingFour">
-                                                      <h4 class="panel-title">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#paymentAcccordian" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                          Cash on delivery
-                                                        </a>
-                                                      </h4>
-                                                    </div>
-                                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                                      <div class="panel-body">
-                                                         <p>Pay <span>Rs 349</span> with cash on delivery.</p>
-                                                        <p><button class="divider-color btn btn-flat btnSite btnPayment" onclick="">Pay</button></p>
-                                                      </div>
-                                                    </div>
+													  </div>
 
-                                                  </div>
-
-
-
-                                                                                    
-
-
-
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    
-                                                                      
-                                </div>                                
+													</div> 
+												</div>
+											</div>	
+										</div>  				        
+									</div>
+									
+									
+									<ul id=post></ul>
+								</div>                        
+                                                               
                             </div>
                             <div class="tab-pane card-panel notify" id="notify">
                                 <h2>Notifications</h2>
@@ -312,6 +326,7 @@
 
 		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
 		<script src="js/vendor/jquery-1.11.2.min.js"></script>
+		<script src="js/vendor/jquery.steps.min.js"></script>
 		<script src="js/vendor/bootstrap.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/vendor/knockout-3.3.0.js"></script>
@@ -353,5 +368,8 @@
             </div> 
 
         </script>
+		
+		
+			
     </body>
 </html>

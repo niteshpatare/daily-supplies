@@ -231,6 +231,8 @@ font-weight: normal;
     border-radius: 0;
     border: 1px solid #CCC;
     width: 90px;
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0);
 }
 .contentDashboard1 .radio input[type="radio"], .contentDashboard1 .radio-inline input[type="radio"], .contentDashboard1 .checkbox input[type="checkbox"], .contentDashboard1 .checkbox-inline input[type="checkbox"] {
     position: static; 
@@ -374,6 +376,9 @@ font-weight: normal;
 .card.small .card-image {
   background: rgba(0, 0, 0, 0.7);
 }
+.card .card-image img{
+  top:-40px;
+}
 .text-center{
     text-align: center;
 }
@@ -464,7 +469,18 @@ header{ max-height: 80px; min-height: 70px;background: none repeat scroll 0% 0% 
 .contentDashboard1 .deliverySummary hr, .contentDashboard1 .orderSummary hr, .contentDashboard1 .paymentOptions hr{
     border-style: dotted;
 }
-
+.card.small {
+  height: 235px;
+}
+.card.small .card-image {
+  height: 100px;
+}
+.card .card-image .card-title {
+  font-weight: bold;
+}
+.paymentCard h2{
+  margin-top:0;
+}
 @media (min-width: 768px) {
   .container {
     width: 890px;
@@ -510,6 +526,6 @@ header{ max-height: 80px; min-height: 70px;background: none repeat scroll 0% 0% 
 @media screen and (min-width: 1201px){
 
     .contentDashboard1 .form-search input {
-        width: 90%;
+        width: 89%;
     }
 }

@@ -1,0 +1,146 @@
+.wizard {position: relative;
+display: block; 
+overflow: hidden;
+}
+.tabcontrol {
+display: block;
+width: 100%;
+overflow: hidden;
+}
+.head{ padding: 0px 20px; }
+.wizard>.content>.title {
+position: absolute;
+left: -999em;
+}
+
+.wizard>.content>.body {
+  padding: 5px 15px 0 15px;
+  float: left;
+  width: 94%;
+}
+
+.wizard>.actions {
+  position: absolute;
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  right: 70px;
+  top: 20px;
+}
+.block{display:inline-block !important;}
+.wizard>.actions >ul >li a{color: #5f5f5f; text-decoration:none;}
+/*
+.wizard>.actions >ul >li a[href^="#prev"]{background: url("img/prev.png") no-repeat; height:24px;}
+.wizard>.actions >ul >li a[href^="#next"]{background: url("img/next.png") no-repeat; height:24px;}
+*/
+#pre{ 
+	background-color: rgb(65, 166, 208);
+
+	float: left;
+	color: #fff;
+	display:none;
+	text-align: center;
+}
+
+#post{ 
+	background-color: #3095C0;
+
+	float: right;
+	color: #fff;
+	text-align: center;
+}
+.pre, .post{
+	width: 25px;
+	display: inline-block;
+}
+.actions a i {
+  font-size: 200%;
+}
+.tabcontrol>.content {
+position: relative;
+display: inline-block;
+width: 100%;
+
+overflow: hidden;
+padding-top: 0px;
+}
+
+.clearfix:before, .clearfix:after {
+display: table;
+content: "";
+line-height: 0;
+}
+
+.wizard .steps .current-info:after{
+	border-left:none;
+	border-top:none;
+	border-right:none;
+	border-bottom:1px solid red;
+	content:"";
+}
+.wizard ul>li, .tabcontrol ul>li {
+display: block;
+padding: 0;
+}
+.wizard .steps .current-info:before {
+content: " ";
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -14px;
+  border-top: 14px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  border-bottom: 14px solid rgba(0, 0, 0, 0);
+  border-left: 10px solid #FF5722;
+  width: 0px;
+  height: 22px;
+  z-index: 999;
+
+}
+.tabcontrol>.steps{
+/*display: none;*/
+}
+
+*, *:before, *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.wizard .actions ul li {display: inline-block; margin: 5px;}
+
+.post {position:relative;}
+.TabNameSpan {position:absolute; left:0; bottom:0px; top: 7px; text-align:center; font-family:inherit; font-weight:bold; width:100%;}
+ul#pre, ul#post { margin:0; padding:0; list-style:none; margin-bottom: 0px;}
+
+ul#pre li, ul#post li {display:inline-block; }
+
+.wizard .steps > ul{
+padding: 0px; margin:0;
+}
+.wizard.tabcontrol ul>li {
+  display: inline-block;
+  
+}
+.steps > ul > li.current, .steps > ul > li.done{
+background-color: #d0e9c6;
+padding: 0 15px;
+}
+
+.steps ul > li.disabled{
+  background-color: #FCF8E3;
+  padding: 0 5px;
+}
+.steps > ul > li {
+  padding: 0 5px;
+  width: 33.33%;
+}
+.steps > ul > li > a{
+	outline: none;
+	position: relative;
+}
+.wizard .actions ul {
+  padding-left:0;
+}
+.wizard .actions a i {
+  color: #FF5722;
+}
