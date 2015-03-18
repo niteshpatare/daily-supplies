@@ -72,22 +72,29 @@ line-height: 0;
 }
 
 .wizard .steps .current-info:after{
-	border-left:none;
-	border-top:none;
-	border-right:none;
-	border-bottom:1px solid red;
-	content:"";
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-top: 14px solid rgba(0, 0, 0, 0);
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-bottom: 14px solid rgba(0, 0, 0, 0);
+  border-right: 10px solid #FF5722;
+  width: 0;
+  height: 22px;
+  z-index: 999;
 }
 .wizard ul>li, .tabcontrol ul>li {
 display: block;
 padding: 0;
 }
 .wizard .steps .current-info:before {
-content: " ";
+  content: " ";
   display: block;
   position: absolute;
-  top: -7px;
-  left: -14px;
+  top: 0px;
+  left: 0px;
   border-top: 14px solid rgba(0, 0, 0, 0);
   border-right: 5px solid rgba(0, 0, 0, 0);
   border-bottom: 14px solid rgba(0, 0, 0, 0);
@@ -95,7 +102,6 @@ content: " ";
   width: 0px;
   height: 22px;
   z-index: 999;
-
 }
 .tabcontrol>.steps{
 /*display: none;*/
@@ -136,11 +142,17 @@ padding: 0 15px;
 }
 .steps > ul > li > a{
 	outline: none;
-	position: relative;
+	
 }
 .wizard .actions ul {
   padding-left:0;
 }
 .wizard .actions a i {
   color: #FF5722;
+}
+.steps ul > li.disabled {
+  padding: 0 15px;
+}
+.wizard.tabcontrol ul>li {
+  position: relative;
 }
