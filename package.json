@@ -1,0 +1,25 @@
+{
+  "name": "daily-supplies",
+  "version": "1.0.0",
+  "description": "App created in knockout to subscribe for newspapers and magazines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start",
+    "build": "npm run build",
+    "server": "nodemon --watch server node -- server/server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\"",
+    "heroku-postbuild": "cd public && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "eject": "npm run eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niteshp27/daily-supplies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niteshp27/daily-supplies/issues"
+  },
+  "homepage": "https://github.com/niteshp27/daily-supplies#readme"
+}
